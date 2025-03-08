@@ -1,23 +1,23 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace TestApp.UnitTests;
 
 public class MatchDatesTests
 {
-    // TODO: finish the test
     [Test]
     public void Test_Match_ValidDate_ReturnsExpectedResult()
     {
         // Arrange
-        string expected = "Day: 31, Month: Dec, Year: 2022";
+        string input = "02.Jan.1995";
+        string expected = "Day: 02, Month: Jan, Year: 1995";
 
         // Act
+        string result = MatchDates.Match(input);
 
         // Assert
-        //Assert.That(result, Is.EqualTo(expected));
+        Assert.That(result, Is.EqualTo(expected));
     }
-
-    // TODO: finish the test
     [Test]
     public void Test_Match_NoMatch_ReturnsEmptyString()
     {
@@ -26,25 +26,49 @@ public class MatchDatesTests
         string expected = string.Empty;
 
         // Act
+        string result = MatchDates.Match(input);
 
         // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_Match_MultipleMatches_ReturnsFirstMatch()
     {
-        // TODO: finish the test
+        // Arrange
+        string input = "02.Jan.1995 03/Jan/1995 04-Jan-1995";
+        string expected = "Day: 02, Month: Jan, Year: 1995";
+
+        // Act
+        string result = MatchDates.Match(input);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_Match_EmptyString_ReturnsEmptyString()
     {
-        // TODO: finish the test
+        // Arrange
+        string input = string.Empty;
+        string expected = string.Empty;
+
+        // Act
+        string result = MatchDates.Match(input);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_Match_NullInput_ThrowsArgumentException()
     {
-        // TODO: finish the test
+        // Arrange
+        string input = null;
+        string expected = "Input cannot be null!";
+
+        // Act & Assert
+        var ex = Assert.Throws<ArgumentException>(() => MatchDates.Match(input));
+        Assert.That(ex.Message, Is.EqualTo(expected));
     }
 }

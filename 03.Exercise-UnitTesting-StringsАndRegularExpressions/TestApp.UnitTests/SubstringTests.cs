@@ -11,27 +11,57 @@ public class SubstringTests
         // Arrange
         string toRemove = "fox";
         string input = "The quick brown fox jumps over the lazy dog";
+        string expected = "The quick brown jumps over the lazy dog";
 
         // Act
+        string result = Substring.RemoveOccurrences(toRemove, input);
 
         // Assert
+        Assert.AreEqual(expected, result);
     }
 
     [Test]
     public void Test_RemoveOccurrences_RemovesSubstringFromStart()
     {
-        // TODO: finish the test
+        // Arrange
+        string toRemove = "The";
+        string input = "The quick brown fox jumps over the lazy dog";
+        string expected = "quick brown fox jumps over lazy dog";
+
+        // Act
+        string result = Substring.RemoveOccurrences(toRemove, input);
+
+        // Assert
+        Assert.AreEqual(expected, result);
     }
 
     [Test]
     public void Test_RemoveOccurrences_RemovesSubstringFromEnd()
     {
-        // TODO: finish the test
+        // Arrange
+        string toRemove = "dog";
+        string input = "The quick brown fox jumps over the lazy dog";
+        string expected = "The quick brown fox jumps over the lazy";
+
+        // Act
+        string result = Substring.RemoveOccurrences(toRemove, input);
+
+        // Assert
+        Assert.AreEqual(expected, result);
     }
 
     [Test]
     public void Test_RemoveOccurrences_RemovesAllOccurrences()
     {
-        // TODO: finish the test
+        // Arrange
+        string toRemove = "fox jumps over";
+        string input = "fox jumps over";
+        string expected = string.Empty;
+
+        // Act
+        string result = Substring.RemoveOccurrences(toRemove, input);
+
+        // Assert
+        Assert.AreEqual(expected, result);
     }
 }

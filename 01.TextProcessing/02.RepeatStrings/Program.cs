@@ -4,11 +4,11 @@
     {
         static void Main(string[] args)
         { //Input
-            string[] words = Console.ReadLine().Split(" ");
+            string[] wordsArray = Console.ReadLine().Split(" ");
             string result = "";
 
             // Logic
-            foreach (string word in words)
+            foreach (string word in wordsArray)
             {
                 string repeatedWord = ""; 
 

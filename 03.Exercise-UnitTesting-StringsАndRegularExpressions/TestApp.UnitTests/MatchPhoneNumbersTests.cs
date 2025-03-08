@@ -10,28 +10,54 @@ public class MatchPhoneNumbersTests
     {
         // Arrange
         string phoneNumbers = "+359-2-124-5678, +359 2 986 5432, +359-2-555-5555";
+        string expected = "+359-2-124-5678, +359 2 986 5432, +359-2-555-5555";
 
         // Act
+        string result = MatchPhoneNumbers.Match(phoneNumbers);
 
         // Assert
-        //Assert.That(result, Is.EqualTo(expected));
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_Match_NoValidPhoneNumbers_ReturnsEmptyString()
     {
-        // TODO: finish the test
+        // Arrange
+        string phoneNumbers = "+359 2 123-1234 +359 2-123-1234 +359-2 123-1234";
+        string expected = string.Empty;
+
+        // Act
+        string result = MatchPhoneNumbers.Match(phoneNumbers);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_Match_EmptyInput_ReturnsEmptyString()
     {
-        // TODO: finish the test
+        // Arrange
+        string phoneNumbers = string.Empty;
+        string expected = string.Empty;
+
+        // Act
+        string result = MatchPhoneNumbers.Match(phoneNumbers);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_Match_MixedValidAndInvalidNumbers_ReturnsOnlyValidNumbers()
     {
-        // TODO: finish the test
+        // Arrange
+        string phoneNumbers = "+359 2 123 1234 +359-2-123-1234 +359 2 123-1234 + 359 2-123-1234 + 359-2 123-1234 +359 2-123 1234";
+        string expected = "+359 2 123 1234, +359-2-123-1234";
+
+        // Act
+        string result = MatchPhoneNumbers.Match(phoneNumbers);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 }
