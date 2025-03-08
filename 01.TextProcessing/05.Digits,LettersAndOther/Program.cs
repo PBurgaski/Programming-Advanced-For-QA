@@ -19,11 +19,11 @@ namespace _05.Digits_LettersAndOther
                 {
                     digits += symbol;
                 }
-                if (char.IsLetter(symbol))
+                else if (char.IsLetter(symbol))
                 {
                     letters += symbol;
                 }
-                if (!(char.IsLetterOrDigit(symbol)))
+                else
                 {
                     otherChars += symbol;
                 }
