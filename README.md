@@ -13,20 +13,35 @@ This repository includes projects and exercises from various courses and topics 
 The repository is organized into folders by topic or course, making it easy to navigate. Here's a general structure:
 
 -Text Processing
+
 -Regular Expressions
+
 -Unit Testing Exercise: Text Processing and Regular Expressions
+
 -Dictionaries, Lambda and LINQ
+
 -Exercise: Dictionaries, Lambda and LINQ
+
 -Unit Testing Exercise: Dictionaries, Lambda and LINQ
+
 -Objects and Classes
+
 -Exercise: Objects and Classes
+
 -Unit Testing Exercise: Objects and Classes
+
 -Exception Handling
+
 -Unit Testing Exercise: Exception Handling
+
 -JavaScript Basics
+
 -JavaScript Fundamentals
+
 -Exercise: JavaScript Concepts
+
 -Unit Testing with JavaScript
+
 -Exercise: Unit Testing with JavaScript
 
   Each folder contains the projects, exercises, and solutions for that specific topic or course.
