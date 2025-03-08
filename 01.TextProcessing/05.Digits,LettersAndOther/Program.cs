@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Metrics;
+using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace _05.Digits_LettersAndOther
@@ -9,29 +10,30 @@ namespace _05.Digits_LettersAndOther
         {
             // Input
             string input = Console.ReadLine();
-            string digits = "";
-            string letters = "";
-            string otherChars = "";
+            // StringBuilders
+            StringBuilder digits = new();
+            StringBuilder letters = new();
+            StringBuilder otherChars = new();
             // Logic & Calculations 
             foreach (char symbol in input)
             {
                 if (char.IsDigit(symbol))
                 {
-                    digits += symbol;
+                    digits.Append(symbol);
                 }
                 else if (char.IsLetter(symbol))
                 {
-                    letters += symbol;
+                    letters.Append(symbol);
                 }
                 else
                 {
-                    otherChars += symbol;
+                    otherChars.Append(symbol);
                 }
             }
             // Output
-            Console.WriteLine(digits);
-            Console.WriteLine(letters);
-            Console.WriteLine(otherChars);
+            Console.WriteLine(digits.ToString());
+            Console.WriteLine(letters.ToString());
+            Console.WriteLine(otherChars.ToString());
         }
     }
 }
